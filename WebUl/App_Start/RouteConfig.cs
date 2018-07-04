@@ -16,7 +16,10 @@ namespace WebUl
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+
+                /* указываем инфраструктуре  MVC framework, чтобы она отправляла запросы поступающие 
+                  для корневого URL приложения методу List() класса AutosController*/ 
+                defaults: new { controller = "Autos", action = "List", id = UrlParameter.Optional }
             );
         }
     }
