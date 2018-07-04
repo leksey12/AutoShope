@@ -1,5 +1,6 @@
 ﻿using Domain.Abstract;
 using Domain.AutoShop;
+using Domain.Concrete;
 using Moq;
 using Ninject;
 using System;
@@ -20,7 +21,7 @@ namespace WebUI.Infrastructure
 
         private void AddBindings()
         {
-            // размещение привязок
+            /*// размещение привязок
             Mock<IAutoRepository> mock = new Mock<IAutoRepository>();
             mock.Setup(m => m.Autos).Returns(new List<Auto>
                 {
@@ -30,7 +31,8 @@ namespace WebUI.Infrastructure
                  new Auto { NAME = "Envy Motors", ADRESS = "г. Москва, ул. Привольная, 70, корп.1", CITY = "Москва",TELEPHONE ="+7(495)645-84-70", SITE = "www.envy-peugeot.ru" },
                  new Auto { NAME = "ВИКИНГИ", ADRESS = "г. Тольятти, ул. Громовой, д.51А", CITY = "Тольятти",TELEPHONE ="+7(8482)63-00-77", SITE = "vikingi.lada.ru" }
             });
-            kernel.Bind<IAutoRepository>().ToConstant(mock.Object);
+            kernel.Bind<IAutoRepository>().ToConstant(mock.Object);*/
+            kernel.Bind<IAutoRepository>().To<EFAutoRepository>();
         }
         
         public object GetService(Type serviceType)
