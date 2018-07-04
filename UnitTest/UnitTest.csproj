@@ -142,9 +142,9 @@
       <Project>{a09b05b1-4ac3-4988-84e4-d25459036a78}</Project>
       <Name>Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WebUl\WebUl.csproj">
+    <ProjectReference Include="..\WebUl\WebUI.csproj">
       <Project>{acab95fc-85c8-4dd5-94aa-4f21732b846f}</Project>
-      <Name>WebUl</Name>
+      <Name>WebUI</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
