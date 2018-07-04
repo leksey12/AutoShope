@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
 //Создание класса модели данных
 namespace Domain.AutoShop
 {
-   public class Auto
+    [Table("Autos")]
+    public class Auto
     {
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       [Key]
         public int AUTOSHOPId { get; set; }
         public string NAME { get; set; }
         public string ADRESS { get; set; }
