@@ -12,7 +12,7 @@ namespace Domain.Concrete
     public class EFDbContext : DbContext
     {
         public DbSet<Auto> Autos { get; set; }
-        public DbSet<AutoSk> AutoSkoda { get; set; }
+        public DbSet<AutoSkoda> AutoSkoda { get; set; }
     }
     
 

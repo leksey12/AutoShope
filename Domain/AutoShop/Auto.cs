@@ -12,7 +12,7 @@ namespace Domain.AutoShop
     [Table("Autos")]
     public class Auto
     {
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
        [Key]
         public int Id { get; set; }
         public string NAME { get; set; }

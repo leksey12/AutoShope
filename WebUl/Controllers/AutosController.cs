@@ -17,7 +17,7 @@ namespace WebUl.Controllers
         }
         // метод действия List(), который создает представление
         public ViewResult List()
-        {
+        { 
             return View(repository.Autos);
         }
     }

@@ -11,7 +11,7 @@ namespace Domain.Concrete
    public class EFAutoSkodaRepository : IAutoSkodaRepository
     {
         EFDbContext context = new EFDbContext();
-        public IEnumerable<AutoSk> AutoSkoda
+        public IEnumerable<AutoSkoda> AutoSkoda
         {
             get { return context.AutoSkoda; }
         }
