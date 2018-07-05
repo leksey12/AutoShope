@@ -9,8 +9,11 @@ using System.Data.Entity;
 
 namespace Domain.Concrete
 {
-   public class EFDbContext : DbContext
+    public class EFDbContext : DbContext
     {
-      public DbSet<Auto> Autos { get; set; }
+        public DbSet<Auto> Autos { get; set; }
+        public DbSet<AutoSk> AutoSkoda { get; set; }
     }
+    
+
 }

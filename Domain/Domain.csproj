@@ -78,8 +78,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAutoRepository.cs" />
+    <Compile Include="Abstract\IAutoSkodaRepository.cs" />
     <Compile Include="AutoShop\Auto.cs" />
+    <Compile Include="AutoShop\AutoSkoda.cs" />
     <Compile Include="Concrete\EFAutoRepository.cs" />
+    <Compile Include="Concrete\EFAutoSkodaRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -8,13 +8,12 @@ using System.Threading.Tasks;
 
 namespace Domain.Concrete
 {
-   public class EFAutoRepository : IAutoRepository
+   public class EFAutoSkodaRepository : IAutoSkodaRepository
     {
         EFDbContext context = new EFDbContext();
-        public IEnumerable<Auto> Autos
+        public IEnumerable<AutoSk> AutoSkoda
         {
-            get { return context.Autos; }
+            get { return context.AutoSkoda; }
         }
-       
     }
 }

@@ -33,6 +33,7 @@ namespace WebUI.Infrastructure
             });
             kernel.Bind<IAutoRepository>().ToConstant(mock.Object);*/
             kernel.Bind<IAutoRepository>().To<EFAutoRepository>();
+           // kernel.Bind<IAutoSkodaRepository>To<EFAutoSkodaRepository>();
         }
         
         public object GetService(Type serviceType)

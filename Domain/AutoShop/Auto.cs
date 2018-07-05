@@ -14,7 +14,7 @@ namespace Domain.AutoShop
     {
         //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
        [Key]
-        public int AUTOSHOPId { get; set; }
+        public int Id { get; set; }
         public string NAME { get; set; }
         public string ADRESS { get; set; }
         public string CITY { get; set; }
