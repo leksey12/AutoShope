@@ -78,7 +78,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAutoRepository.cs" />
+    <Compile Include="Abstract\ISkodaRepository.cs" />
     <Compile Include="AutoShop\Auto.cs" />
+    <Compile Include="AutoShop\Skoda.cs" />
     <Compile Include="Concrete\EFAutoRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
