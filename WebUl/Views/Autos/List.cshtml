@@ -7,7 +7,7 @@
 
 @foreach (Auto auto in Model)
 {
-
+    
     <div>
      
         <h3>@auto.NAME</h3> 
@@ -15,7 +15,8 @@
         <p>@auto.ADRESS</p>
         <h4>@auto.TELEPHONE</h4>
         <h4>@auto.SITE</h4>
-        <a href="List"><p>Перейти</p></a>
+        <a href="@Url.Action("List","Skoda")"><p>Перейти</p></a>
+        @*<a href="Skoda"><p>Перейти</p></a>*@
         @*<p><a class="btn btn-default" href="~/Views/Skoda/Skoda/@auto.Id" style="color:#ffffff">Перейти &raquo;</a></p>*@ 
        
     </div>

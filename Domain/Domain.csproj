@@ -83,6 +83,7 @@
     <Compile Include="AutoShop\Skoda.cs" />
     <Compile Include="Concrete\EFAutoRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
+    <Compile Include="Concrete\EFSkodaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
