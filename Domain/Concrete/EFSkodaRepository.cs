@@ -12,9 +12,9 @@ namespace Domain.Concrete
     public class EFSkodaRepository : ISkodaRepository
     {
         EFDbContext context = new EFDbContext();
-    public IEnumerable<Skoda> AutoSkoda
+    public IEnumerable<Skoda> Skodas
         {
-            get { return context.AutoSkoda; }
+            get { return context.Skodas; }
 
         }
     }

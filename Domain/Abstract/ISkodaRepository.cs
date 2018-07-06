@@ -9,6 +9,6 @@ namespace Domain.Abstract
 {
    public interface ISkodaRepository
     {
-        IEnumerable<Skoda> AutoSkoda { get; }
+        IEnumerable<Skoda> Skodas { get; }
     }
 }

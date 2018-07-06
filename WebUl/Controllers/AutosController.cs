@@ -19,6 +19,6 @@ namespace WebUl.Controllers
         public ViewResult List()
         { 
             return View(repository.Autos);
-        }
     }
+}
 }

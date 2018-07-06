@@ -9,7 +9,7 @@ using Domain.AutoShop;
 
 namespace Domain.AutoShop
 {
-    [Table("Skoda")]
+    [Table("Skodas")]
     public  class Skoda
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -17,7 +17,7 @@ namespace Domain.AutoShop
         public int Id { get; set; }
         public string Name { get; set; }
         public string Model { get; set; }
-        public string AutosID { get; set; }
+        public int? AutosID { get; set; }
         public decimal Price { get; set; }
     }
 }

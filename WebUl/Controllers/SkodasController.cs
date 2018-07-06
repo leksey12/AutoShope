@@ -7,18 +7,18 @@ using System.Web.Mvc;
 
 namespace WebUl.Controllers
 {
-    public class SkodaController : Controller
+    public class SkodasController : Controller
     {
         // конструктор, который объявляет зависимость от интерфейса IAutoRepository
         private ISkodaRepository repository;
-        public SkodaController(ISkodaRepository repo)
+        public SkodasController(ISkodaRepository repo)
         {
             repository = repo;
         }
         // метод действия List(), который создает представление
-        public ViewResult List()
+        public ViewResult Skoda()
         {
-            return View(repository.AutoSkoda);
+            return View(repository.Skodas);
         }
     }
 }

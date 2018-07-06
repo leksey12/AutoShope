@@ -20,7 +20,7 @@ namespace WebUI.Infrastructure
         }
 
         private void AddBindings()
-        {
+        {kernel.Bind<ISkodaRepository>().To<EFSkodaRepository>();
             /*// размещение привязок
             Mock<IAutoRepository> mock = new Mock<IAutoRepository>();
             mock.Setup(m => m.Autos).Returns(new List<Auto>
@@ -33,7 +33,7 @@ namespace WebUI.Infrastructure
             });
             kernel.Bind<IAutoRepository>().ToConstant(mock.Object);*/
             kernel.Bind<IAutoRepository>().To<EFAutoRepository>();
-            kernel.Bind<ISkodaRepository>.To<EFSkodaRepository>();
+            
          
         }
         
