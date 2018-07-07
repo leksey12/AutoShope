@@ -89,6 +89,10 @@
     <Compile Include="AutoShop\Porshe.cs" />
     <Compile Include="AutoShop\BMW.cs" />
     <Compile Include="AutoShop\Skoda.cs" />
+    <Compile Include="Concrete\EFLadaRepository.cs" />
+    <Compile Include="Concrete\EFPeugeotRepository.cs" />
+    <Compile Include="Concrete\EFPorsheRepository.cs" />
+    <Compile Include="Concrete\EFBMWRepository.cs" />
     <Compile Include="Concrete\EFAutoRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFSkodaRepository.cs" />

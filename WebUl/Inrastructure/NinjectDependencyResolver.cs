@@ -32,11 +32,15 @@ namespace WebUI.Infrastructure
                  new Auto { NAME = "ВИКИНГИ", ADRESS = "г. Тольятти, ул. Громовой, д.51А", CITY = "Тольятти",TELEPHONE ="+7(8482)63-00-77", SITE = "vikingi.lada.ru" }
             });
             kernel.Bind<IAutoRepository>().ToConstant(mock.Object);*/
-            kernel.Bind<IAutoRepository>().To<EFAutoRepository>();
-            
-         
+
+            kernel.Bind<IBMWRepository>().To<EFBMWRepository>();
+            kernel.Bind<ILadaRepository>().To<EFLadaRepository>();
+            kernel.Bind<IPeugeotRepository>().To<EFPeugeotRepository>();
+            kernel.Bind<IPorsheRepository>().To<EFPorsheRepository>();
+
+
         }
-        
+
         public object GetService(Type serviceType)
         {
             return kernel.TryGet(serviceType);

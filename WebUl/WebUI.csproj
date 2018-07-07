@@ -152,6 +152,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AutosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LadaController.cs" />
+    <Compile Include="Controllers\PeugeotController .cs" />
+    <Compile Include="Controllers\PorsheController .cs" />
+    <Compile Include="Controllers\BMWsController .cs" />
     <Compile Include="Controllers\SkodasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -172,6 +176,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Skodas\Skoda.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\BMWs\List.cshtml" />
+    <Content Include="Views\Lada\List.cshtml" />
+    <Content Include="Views\Peugeot\List.cshtml" />
+    <Content Include="Views\Porshe\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

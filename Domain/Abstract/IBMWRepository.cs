@@ -9,6 +9,6 @@ namespace Domain.Abstract
 {
    public interface IBMWRepository
     {
-        IEnumerable<BMW> BMW { get; }
+        IEnumerable<BMW> BMWs { get; }
     }
 }

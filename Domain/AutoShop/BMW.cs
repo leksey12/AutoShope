@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Domain.AutoShop;
 namespace Domain.AutoShop
 {
-    [Table("BMW")]
+    [Table("BMWs")]
     public class BMW
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
