@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Domain.AutoShop;
-
 namespace Domain.AutoShop
 {
-    [Table("Skodas")]
-    public  class Skoda
+    [Table("BMW")]
+    public class BMW
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]

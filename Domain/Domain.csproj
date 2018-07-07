@@ -80,6 +80,10 @@
     <Compile Include="Abstract\IAutoRepository.cs" />
     <Compile Include="Abstract\ISkodaRepository.cs" />
     <Compile Include="AutoShop\Auto.cs" />
+    <Compile Include="AutoShop\Lada.cs" />
+    <Compile Include="AutoShop\Peugeot.cs" />
+    <Compile Include="AutoShop\Porshe.cs" />
+    <Compile Include="AutoShop\BMW.cs" />
     <Compile Include="AutoShop\Skoda.cs" />
     <Compile Include="Concrete\EFAutoRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />

@@ -9,8 +9,8 @@ using Domain.AutoShop;
 
 namespace Domain.AutoShop
 {
-    [Table("Skodas")]
-    public  class Skoda
+    [Table("Porshe")]
+    public class Porshe
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
