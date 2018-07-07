@@ -4,15 +4,30 @@
 @{
     ViewBag.Title = "Skoda";
 }
-
-@foreach (Skoda auto in Model)
-{
-
     <div>
-        <h3>@auto.Name</h3>
-        <p>@auto.Model</p>
-        <h4>@auto.Price.ToString("# руб")</h4>
-       
+        <h3>Auto City Skoda:</h3>
+        <table>
+            <tr>
+                <th>
+                    Название
+                </th>
+
+                <th>
+                    Модель
+                </th>
+
+                <th>
+                    цена
+                </th>
+
+            </tr>
+           @foreach (Skoda p in Model)
+            {
+                <tr>
+                    <td><p>@p.Name </p></td>
+                    <td><p>@p.Model</p></td>
+                    <td><p>@p.Price.ToString("# руб")
+                </tr>
+            }
+        </table>
     </div>
-    <hr />
-}

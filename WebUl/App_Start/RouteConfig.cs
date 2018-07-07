@@ -19,8 +19,8 @@ namespace WebUl
 
                 /* указываем инфраструктуре  MVC framework, чтобы она отправляла запросы поступающие 
                   для корневого URL приложения методу List() класса AutosController*/
-                defaults: new { controller = "Autos", action = "List", id = UrlParameter.Optional }
-                //defaults: new { controller = "Skodas", action = "Skoda", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+ 
             );
         }
     }
