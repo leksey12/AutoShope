@@ -10,8 +10,8 @@ namespace WebUl.Controllers
     public class SkodasController : Controller
     {
         // конструктор, который объявляет зависимость от интерфейса IAutoRepository
-        private IBMWRepository repository;
-        public SkodasController(IBMWRepository repo)
+        private ISkodaRepository repository;
+        public SkodasController(ISkodaRepository repo)
         {
             repository = repo;
         }

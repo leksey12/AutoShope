@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 namespace Domain.Concrete
 {
 
-    public class EFSkodaRepository : IBMWRepository
+    public class EFSkodaRepository : ISkodaRepository
     {
         EFDbContext context = new EFDbContext();
-    public IEnumerable<Skoda> BMW
+    public IEnumerable<Skoda> Skodas
         {
             get { return context.Skodas; }
 
