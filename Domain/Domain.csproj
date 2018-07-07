@@ -78,6 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAutoRepository.cs" />
+    <Compile Include="Abstract\ILadaRepository.cs" />
+    <Compile Include="Abstract\IPeugeotRepository .cs" />
+    <Compile Include="Abstract\IPorsheRepository.cs" />
+    <Compile Include="Abstract\IBMWRepository.cs" />
     <Compile Include="Abstract\ISkodaRepository.cs" />
     <Compile Include="AutoShop\Auto.cs" />
     <Compile Include="AutoShop\Lada.cs" />
