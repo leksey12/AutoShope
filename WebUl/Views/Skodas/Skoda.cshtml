@@ -5,34 +5,17 @@
 @{
     ViewBag.Title = "Skoda";
 }
-    <div>
-        <h3>Auto City Skoda:</h3>
-        <table>
-            <tr>
-                <th>
-                    Название
-                </th>
-
-                <th>
-                    Модель
-                </th>
-
-                <th>
-                    цена
-                </th>
-
-            </tr>
-           @foreach (var p in @Model.Skodas)
-            {
-                <tr>
-                    <td><p>@p.Name </p></td>
-                    <td><p>@p.Model</p></td>
-                    <td><p>@p.Price.ToString("# руб")
-                </tr>
-            }
-        </table>  
+@foreach (var p in @Model.Skodas)
+{
+    <div class="well">
+        <h3>
+            <strong>@p.Name</strong>
+            <span class="pull-right label label-primary">@p.Price.ToString("# руб")</span>
+        </h3>
+        <span class="lead">@p.Model</span>
     </div>
-<div>
-    @Html.PageLinks(Model.PagingInfo, x => Url.Action("Skoda", new { page = x })) 
-     <a href="@Url.Action("Index","Home")"><h4>Главная</h4></a>
+}
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("Skoda", new { page = x }))
+    @*<a href="@Url.Action("Index","Home")"><h4>Главная</h4></a>*@
 </div>
