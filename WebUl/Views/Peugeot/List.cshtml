@@ -1,6 +1,6 @@
-﻿@using Domain.AutoShop
-@model IEnumerable<Peugeot>
-
+﻿@using WebUl.Models
+@using WebUl.HtmlHelpers
+@model PeugeotListViewModel
 @{
     ViewBag.Title = "Peugeot";
 }
@@ -21,7 +21,7 @@
             </th>
 
         </tr>
-        @foreach (Peugeot p in Model)
+        @foreach (var p in @Model.Peugeot)
             {
             <tr>
                 <td><p>@p.Name </p></td>
@@ -30,5 +30,8 @@
             </tr>
         }
     </table>
-    <a href="@Url.Action("Index","Home")"><h4>Назад</h4></a>
+</div>
+<div>
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+    <a href="@Url.Action("Index","Home")"><h4>Главная</h4></a>
 </div>

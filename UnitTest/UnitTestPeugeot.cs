@@ -1,45 +1,46 @@
 ﻿using System;
+using System.Text;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain.Abstract;
-using Moq;
 using Domain.AutoShop;
-using WebUl.Controllers;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web.Mvc;
-using WebUl.Models;
 using WebUl.HtmlHelpers;
+using Moq;
+using WebUl.Controllers;
+using WebUl.Models;
+using System.Linq;
 namespace UnitTest
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTestPeugeot
     {
         [TestMethod]
         public void Can_Paginate()
         { // Организация (arrange)
-            Mock<ISkodaRepository> mock = new Mock<ISkodaRepository>();
-            mock.Setup(m => m.Skodas).Returns(new List<Skoda>
+            Mock<IPeugeotRepository> mock = new Mock<IPeugeotRepository>();
+            mock.Setup(m => m.Peugeot).Returns(new List<Peugeot>
             {
-                new Skoda { Id = 1, Name = "Игра1"},
-                new Skoda { Id = 2, Name = "Игра2"},
-                new Skoda { Id = 3, Name = "Игра3"},
-                new Skoda { Id = 4, Name = "Игра4"},
-                new Skoda { Id = 5, Name = "Игра5"}
+               new Peugeot { Id = 1, Name = "Игра1"},
+        new Peugeot { Id = 2, Name = "Игра2"},
+        new Peugeot { Id = 3, Name = "Игра3"},
+        new Peugeot { Id = 4, Name = "Игра4"},
+        new Peugeot { Id = 5, Name = "Игра5"}
             });
-            SkodasController controller = new SkodasController(mock.Object);
+            PeugeotController controller = new PeugeotController(mock.Object);
             controller.pageSize = 3;
 
             // Действие (act)
-            // IEnumerable<Skoda> result = (IEnumerable<Skoda>)controller.Skodas(2).Model;
-            SkodasSkodaViewModel result = (SkodasSkodaViewModel)controller.Skoda(2).Model;
+            // IEnumerable<Skoda> result = (IEnumerable<Skoda>)controller.List(2).Model;
+            PeugeotListViewModel result = (PeugeotListViewModel)controller.List(2).Model;
 
             // Утверждение (assert)
-            List<Skoda> games = result.Skodas.ToList();
+            List<Peugeot> games = result.Peugeot.ToList();
             Assert.IsTrue(games.Count == 2);
             Assert.AreEqual(games[0].Name, "Игра4");
             Assert.AreEqual(games[1].Name, "Игра5");
         }
-//создание ссылок на страницы
+        //создание ссылок на страницы
         [TestMethod]
         public void Can_Generate_Page_Links()
         {
@@ -69,25 +70,25 @@ namespace UnitTest
                 result.ToString());
         }
         [TestMethod]
-//удостоверяемся, что контроллер отправляет представлению правильную информацию о разбиении на страницы
+        //удостоверяемся, что контроллер отправляет представлению правильную информацию о разбиении на страницы
         public void Can_Send_Pagination_View_Model()
         {
             // Организация (arrange)
-            Mock<ISkodaRepository> mock = new Mock<ISkodaRepository>();
-            mock.Setup(m => m.Skodas).Returns(new List<Skoda>
-    {
-        new Skoda { Id = 1, Name = "Игра1"},
-        new Skoda { Id = 2, Name = "Игра2"},
-        new Skoda { Id = 3, Name = "Игра3"},
-        new Skoda { Id = 4, Name = "Игра4"},
-        new Skoda { Id = 5, Name = "Игра5"}
-    });
-            SkodasController controller = new SkodasController(mock.Object);
+            Mock<IPeugeotRepository> mock = new Mock<IPeugeotRepository>();
+            mock.Setup(m => m.Peugeot).Returns(new List<Peugeot>
+   {
+        new Peugeot { Id = 1, Name = "Игра1"},
+        new Peugeot { Id = 2, Name = "Игра2"},
+        new Peugeot { Id = 3, Name = "Игра3"},
+        new Peugeot { Id = 4, Name = "Игра4"},
+        new Peugeot { Id = 5, Name = "Игра5"}
+            });
+            PeugeotController controller = new PeugeotController(mock.Object);
             controller.pageSize = 3;
 
             // Act
-            SkodasSkodaViewModel result
-                = (SkodasSkodaViewModel)controller.Skoda(2).Model;
+            PeugeotListViewModel result
+                 = (PeugeotListViewModel)controller.List(2).Model;
 
             // Assert
             PagingInfo pageInfo = result.PagingInfo;

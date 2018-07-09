@@ -10,14 +10,6 @@ namespace WebUl.Controllers
     public class HomeController : Controller
     {
 
-        private readonly EFDbContext _db = new EFDbContext();
-        // GET: Home
-        public ViewResult Skodas()
-        {
-            var Skodas = _db.Skodas.ToList();
-            ViewBag.Skodas = Skodas;
-            return View();
-        }
         public ViewResult Index()
         {
             return View();
