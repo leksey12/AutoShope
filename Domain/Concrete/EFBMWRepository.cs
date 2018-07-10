@@ -15,6 +15,22 @@ namespace Domain.Concrete
         {
             get { return context.BMWs; }
         }
-       
+        public void SaveBMW(BMW game)
+        {
+            if (game.Id == 0)
+                context.BMWs.Add(game);
+            else
+            {
+                BMW dbEntry = context.BMWs.Find(game.Id);
+                if (dbEntry != null)
+                {
+                    dbEntry.Name = game.Name;
+                    dbEntry.Model = game.Model;
+                    dbEntry.Price = game.Price;
+                }
+            }
+            context.SaveChanges();
+        }
+
     }
 }

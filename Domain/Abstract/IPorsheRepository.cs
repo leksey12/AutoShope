@@ -10,5 +10,6 @@ namespace Domain.Abstract
    public interface IPorsheRepository
     {
         IEnumerable<Porshe> Porshe { get; }
+        void SavePorshe(Porshe game);
     }
 }

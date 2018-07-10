@@ -11,13 +11,15 @@
     <div class="navbar navbar-inverse" role="navigation">
         <a class="navbar-brand" href="#"></a>
     </div>
-    <div class="row panel">
+    @*<div class="row panel">*@
         <div id="categories" class="col-xs-3">
-            <a href="@Url.Action("Index","Home")"><h4>Главная</h4></a>
+            @*<a href="@Url.Action("Index","Home")"><h4>Главная</h4></a>*@
+            @Html.ActionLink("Главная", "Index", "Home", null,
+            new { @class = "btn btn-default" })
         </div>
         <div class="col-xs-8">
             @RenderBody()
         </div>
-    </div>
+    @*</div>*@
 </body>
 </html>

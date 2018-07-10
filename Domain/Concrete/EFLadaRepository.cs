@@ -15,6 +15,22 @@ namespace Domain.Concrete
         {
             get { return context.Lada; }
         }
-       
+        public void SaveLada(Lada game)
+        {
+            if (game.Id == 0)
+                context.Lada.Add(game);
+            else
+            {
+                Lada dbEntry = context.Lada.Find(game.Id);
+                if (dbEntry != null)
+                {
+                    dbEntry.Name = game.Name;
+                    dbEntry.Model = game.Model;
+                    dbEntry.Price = game.Price;
+                }
+            }
+            context.SaveChanges();
+        }
+
     }
 }

@@ -10,5 +10,6 @@ namespace Domain.Abstract
    public interface ISkodaRepository
     {
         IEnumerable<Skoda> Skodas { get; }
+        void SaveSkoda(Skoda game);
     }
 }

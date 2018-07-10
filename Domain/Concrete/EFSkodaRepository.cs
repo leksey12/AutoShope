@@ -17,6 +17,23 @@ namespace Domain.Concrete
             get { return context.Skodas; }
 
         }
+        public void SaveSkoda(Skoda game)
+        {
+            if (game.Id == 0)
+                context.Skodas.Add(game);
+            else
+            {
+                Skoda dbEntry = context.Skodas.Find(game.Id);
+                if (dbEntry != null)
+                {
+                    dbEntry.Name = game.Name;
+                    dbEntry.Model= game.Model;
+                    dbEntry.Price = game.Price;
+                }
+            }
+            context.SaveChanges();
+        }
+
     }
 }
      

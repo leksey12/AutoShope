@@ -15,6 +15,22 @@ namespace Domain.Concrete
         {
             get { return context.Porshe; }
         }
-       
+        public void SavePorshe(Porshe game)
+        {
+            if (game.Id == 0)
+                context.Porshe.Add(game);
+            else
+            {
+                Porshe dbEntry = context.Porshe.Find(game.Id);
+                if (dbEntry != null)
+                {
+                    dbEntry.Name = game.Name;
+                    dbEntry.Model = game.Model;
+                    dbEntry.Price = game.Price;
+                }
+            }
+            context.SaveChanges();
+        }
+
     }
 }

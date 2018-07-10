@@ -10,5 +10,6 @@ namespace Domain.Abstract
    public interface IBMWRepository
     {
         IEnumerable<BMW> BMWs { get; }
+        void SaveBMW(BMW game);
     }
 }

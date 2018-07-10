@@ -10,5 +10,6 @@ namespace Domain.Abstract
    public interface IPeugeotRepository
     {
         IEnumerable<Peugeot> Peugeot { get; }
+        void SavePeugeot(Peugeot game);
     }
 }

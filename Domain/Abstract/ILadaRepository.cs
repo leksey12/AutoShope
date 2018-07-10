@@ -10,5 +10,6 @@ namespace Domain.Abstract
    public interface ILadaRepository
     {
         IEnumerable<Lada> Lada { get; }
+        void SaveLada(Lada game);
     }
 }

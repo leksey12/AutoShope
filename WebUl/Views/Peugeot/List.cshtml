@@ -18,3 +18,7 @@
     @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
     @*<a href="@Url.Action("Index","Home")"><h4>Главная</h4></a>*@
 </div>
+<div class="panel-footer">
+    @Html.ActionLink("Aдмин редактор", "Index", "AdminPeugeot", null,
+            new { @class = "btn btn-default" })
+</div>

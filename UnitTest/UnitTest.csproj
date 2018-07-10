@@ -141,6 +141,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AdminBMWTest.cs" />
+    <Compile Include="AdminLadaTest.cs" />
+    <Compile Include="AdminPeugeotTest.cs" />
+    <Compile Include="AdminPorsheTest.cs" />
+    <Compile Include="AdminTest.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
