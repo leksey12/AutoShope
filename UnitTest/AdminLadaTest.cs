@@ -135,6 +135,32 @@ namespace UnitTest
             // Утверждение - проверка типа результата метода
             Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
+        [TestMethod]
+        public void Can_Delete_Valid_Games()
+        {
+            // Организация - создание объекта Game
+            Lada game = new Lada { Id = 2, Name = "Игра2" };
 
+            // Организация - создание имитированного хранилища данных
+            Mock<ILadaRepository> mock = new Mock<ILadaRepository>();
+            mock.Setup(m => m.Lada).Returns(new List<Lada>
+    {
+        new Lada { Id = 1, Name = "Игра1"},
+        new Lada { Id = 2, Name = "Игра2"},
+        new Lada { Id = 3, Name = "Игра3"},
+        new Lada { Id = 4, Name = "Игра4"},
+        new Lada { Id = 5, Name = "Игра5"}
+    });
+
+            // Организация - создание контроллера
+            AdminLadaController controller = new AdminLadaController(mock.Object);
+
+            // Действие - удаление игры
+            controller.Delete(game.Id);
+
+            // Утверждение - проверка того, что метод удаления в хранилище
+            // вызывается для корректного объекта Game
+            mock.Verify(m => m.DeleteLada(game.Id));
+        }
     }
 }

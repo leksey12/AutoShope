@@ -47,6 +47,17 @@ namespace WebUl.Controllers
         {
             return View("Edit", new Lada());
         }
-    
+        [HttpPost]
+        public ActionResult Delete(int Id)
+        {
+            Lada deletedLada = repository.DeleteLada(Id);
+            if (deletedLada != null)
+            {
+                TempData["message"] = string.Format("Машина \"{0}\" была удалена",
+                    deletedLada.Name);
+            }
+            return RedirectToAction("Index");
+        }
+
     }
 }

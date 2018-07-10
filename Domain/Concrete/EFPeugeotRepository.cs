@@ -31,6 +31,16 @@ namespace Domain.Concrete
             }
             context.SaveChanges();
         }
+        public Peugeot DeletePeugeot(int Id)
+        {
+            Peugeot dbEntry = context.Peugeot.Find(Id);
+            if (dbEntry != null)
+            {
+                context.Peugeot.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
 
     }
 }

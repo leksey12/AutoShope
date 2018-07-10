@@ -11,5 +11,6 @@ namespace Domain.Abstract
     {
         IEnumerable<Lada> Lada { get; }
         void SaveLada(Lada game);
+        Lada DeleteLada(int Id);
     }
 }

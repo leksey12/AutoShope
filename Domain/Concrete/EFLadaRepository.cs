@@ -31,6 +31,16 @@ namespace Domain.Concrete
             }
             context.SaveChanges();
         }
+        public Lada DeleteLada(int Id)
+        {
+            Lada dbEntry = context.Lada.Find(Id);
+            if (dbEntry != null)
+            {
+                context.Lada.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
 
     }
 }

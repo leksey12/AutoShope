@@ -31,6 +31,16 @@ namespace Domain.Concrete
             }
             context.SaveChanges();
         }
+        public BMW DeleteBMW(int Id)
+        {
+            BMW dbEntry = context.BMWs.Find(Id);
+            if (dbEntry != null)
+            {
+                context.BMWs.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
 
     }
 }

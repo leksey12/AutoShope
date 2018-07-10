@@ -33,7 +33,7 @@
                         <td class="text-right">@item.Model</td>
                         <td class="text-right">@item.Price.ToString("# руб")</td>
                         <td class="text-center">
-                            @using (Html.BeginForm("Delete", "Admin"))
+                            @using (Html.BeginForm("Delete", "AdminBMW"))
                             {
                                 @Html.Hidden("Id", item.Id)
                                 <input type="submit"

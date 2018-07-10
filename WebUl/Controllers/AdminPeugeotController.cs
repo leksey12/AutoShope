@@ -47,5 +47,16 @@ namespace WebUl.Controllers
         {
             return View("Edit", new Peugeot());
         }
+        [HttpPost]
+        public ActionResult Delete(int Id)
+        {
+            Peugeot deletedPeugeot = repository.DeletePeugeot(Id);
+            if (deletedPeugeot != null)
+            {
+                TempData["message"] = string.Format("Машина \"{0}\" была удалена",
+                    deletedPeugeot.Name);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

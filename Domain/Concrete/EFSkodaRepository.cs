@@ -33,6 +33,16 @@ namespace Domain.Concrete
             }
             context.SaveChanges();
         }
+        public Skoda DeleteSkoda(int Id)
+        {
+            Skoda dbEntry = context.Skodas.Find(Id);
+            if (dbEntry != null)
+            {
+                context.Skodas.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
 
     }
 }

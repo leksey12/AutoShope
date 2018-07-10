@@ -47,5 +47,16 @@ namespace WebUl.Controllers
         {
             return View("Edit", new Porshe());
         }
+        [HttpPost]
+        public ActionResult Delete(int Id)
+        {
+            Porshe deletedPorshe = repository.DeletePorshe(Id);
+            if (deletedPorshe != null)
+            {
+                TempData["message"] = string.Format("Машина \"{0}\" была удалена",
+                    deletedPorshe.Name);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

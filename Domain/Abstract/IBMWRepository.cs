@@ -11,5 +11,6 @@ namespace Domain.Abstract
     {
         IEnumerable<BMW> BMWs { get; }
         void SaveBMW(BMW game);
+        BMW DeleteBMW(int Id);
     }
 }

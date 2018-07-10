@@ -47,5 +47,16 @@ namespace WebUl.Controllers
         {
             return View("Edit", new BMW());
         }
+        [HttpPost]
+        public ActionResult Delete(int Id)
+        {
+            BMW deletedBMW = repository.DeleteBMW(Id);
+            if (deletedBMW != null)
+            {
+                TempData["message"] = string.Format("Машина \"{0}\" была удалена",
+                    deletedBMW.Name);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

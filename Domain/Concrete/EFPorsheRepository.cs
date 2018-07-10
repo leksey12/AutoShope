@@ -31,6 +31,16 @@ namespace Domain.Concrete
             }
             context.SaveChanges();
         }
+        public Porshe DeletePorshe(int Id)
+        {
+            Porshe dbEntry = context.Porshe.Find(Id);
+            if (dbEntry != null)
+            {
+                context.Porshe.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
 
     }
 }

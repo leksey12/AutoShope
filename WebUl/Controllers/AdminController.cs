@@ -47,6 +47,17 @@ namespace WebUl.Controllers
         {
             return View("Edit", new Skoda());
         }
+        [HttpPost]
+        public ActionResult Delete(int Id)
+        {
+            Skoda deletedSkoda = repository.DeleteSkoda(Id);
+            if (deletedSkoda != null)
+            {
+                TempData["message"] = string.Format("Машина \"{0}\" была удалена",
+                    deletedSkoda.Name);
+            }
+            return RedirectToAction("Index");
+        }
 
     }
 }
