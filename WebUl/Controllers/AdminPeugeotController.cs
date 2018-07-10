@@ -57,7 +57,7 @@ namespace WebUl.Controllers
             if (ModelState.IsValid)
             {
                 repository.SavePeugeot(game);
-                TempData["message"] = string.Format("Изменения в Envy Motors \"{0}\" были сохранены", game.Name);
+                TempData["message"] = string.Format("Изменения в Envy Motors \"{0}{1}\" были сохранены", game.Name, game.Model);
                 return RedirectToAction("Index");
             }
             else

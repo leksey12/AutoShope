@@ -57,7 +57,7 @@ namespace WebUl.Controllers
             if (ModelState.IsValid)
             {
                 repository.SaveBMW(game);
-                TempData["message"] = string.Format("Изменения в Изар-Авто \"{0}\" были сохранены", game.Name);
+                TempData["message"] = string.Format("Изменения в Изар-Авто \"{0} {1}\" были сохранены", game.Name, game.Model);
                 return RedirectToAction("Index");
             }
             else

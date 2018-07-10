@@ -54,7 +54,7 @@ namespace WebUl.Controllers
             if (ModelState.IsValid)
             {
                 repository.SaveSkoda(game);
-                TempData["message"] = string.Format("Изменения в Auto City Skoda \"{0}\" были сохранены", game.Name);
+                TempData["message"] = string.Format("Изменения в Auto City Skoda \"{0} {1}\" были сохранены", game.Name, game.Model);
                 return RedirectToAction("Index");
             }
             else
