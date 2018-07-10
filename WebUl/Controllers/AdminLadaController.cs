@@ -17,9 +17,32 @@ namespace WebUl.Controllers
             repository = repo;
         }
 
-        public ViewResult Index()
+        //public ViewResult Index()
+        //{
+        //    return View(repository.Lada);
+        //}
+        public ViewResult Index(string sortOrder)
         {
-            return View(repository.Lada);
+            ViewBag.ModelSortParm = String.IsNullOrEmpty(sortOrder) ? "model_desc" : "";
+            ViewBag.PriceSortParm = sortOrder == "Price" ? "price_desc" : "Price";
+            var students = from s in repository.Lada
+                           select s;
+            switch (sortOrder)
+            {
+                case "model_desc":
+                    students = students.OrderByDescending(s => s.Model);
+                    break;
+                case "Price":
+                    students = students.OrderBy(s => s.Price);
+                    break;
+                case "price_desc":
+                    students = students.OrderByDescending(s => s.Price);
+                    break;
+                default:
+                    students = students.OrderBy(s => s.Model);
+                    break;
+            }
+            return View(students.ToList());
         }
         public ViewResult Edit(int Id)
         {

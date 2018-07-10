@@ -21,8 +21,12 @@
                 <tr>
                     <th class="text-right">ID</th>
                     <th>Название</th>
-                    <th>Модель</th>
-                    <th class="text-right">Цена</th>
+                    <th>
+                        @Html.ActionLink("Модель", "Index", new { sortOrder = ViewBag.ModelSortParm })
+                    </th>
+                    <th>
+                        @Html.ActionLink("Цена", "Index", new { sortOrder = ViewBag.PriceSortParm })
+                    </th>
                     <th class="text-center">Действия</th>
                 </tr>
                 @foreach (var item in Model)
@@ -33,7 +37,7 @@
                         <td class="text-right">@item.Model</td>
                         <td class="text-right">@item.Price.ToString("# руб")</td>
                         <td class="text-center">
-                            @using (Html.BeginForm("Delete", "Admin"))
+                            @using (Html.BeginForm("Delete", "AdminLada"))
                             {
                                 @Html.Hidden("Id", item.Id)
                                 <input type="submit"
