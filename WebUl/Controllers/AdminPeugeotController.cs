@@ -43,5 +43,9 @@ namespace WebUl.Controllers
                 return View(game);
             }
         }
+        public ViewResult Create()
+        {
+            return View("Edit", new Peugeot());
+        }
     }
 }

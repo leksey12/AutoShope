@@ -8,8 +8,8 @@
     <div class="panel-heading">
         <h3>Редактирование информации @Model.Name «@Model.Model»</h3>
     </div>
-    @using (Html.BeginForm())
-    {
+@using (Html.BeginForm("Edit", "AdminPorshe"))
+{
         <div class="panel-body">
             @Html.HiddenFor(m => m.Id)
             @foreach (var property in ViewData.ModelMetadata.Properties)

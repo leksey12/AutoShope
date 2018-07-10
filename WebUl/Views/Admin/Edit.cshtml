@@ -8,8 +8,8 @@
     <div class="panel-heading">
         <h3>Редактирование информации @Model.Name «@Model.Model»</h3>
     </div>
-    @using (Html.BeginForm())
-    {
+ @using (Html.BeginForm("Edit", "Admin")) 
+ {
         <div class="panel-body">
             @Html.HiddenFor(m => m.Id)
             @foreach (var property in ViewData.ModelMetadata.Properties)
@@ -21,7 +21,7 @@
                         @if (property.PropertyName == "Model")
                         {
                             @Html.TextArea(property.PropertyName, null,
-                                new { @class = "form-control", rows = 4 })
+                                new { @class = "form-control", rows = 5 })
                         }
                         else
                         {
