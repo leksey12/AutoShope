@@ -19,17 +19,17 @@ namespace WebUl.Controllers
             repository = repo;
         }
         // метод действия Skoda(), который создает представление
-        public ViewResult Skoda(int page =1)
+        public ViewResult Skoda(int page = 1)
         {
             /*обновить метод действия Skoda() класса SkodasController так, чтобы он использовал класс SkodasSkodaViewModel 
           для снабжения представления сведениями о товарах, отображаемых на страницах, и информацией о разбиении на страницы*/
-   
-               SkodasSkodaViewModel model = new SkodasSkodaViewModel
+
+            SkodasSkodaViewModel model = new SkodasSkodaViewModel
             {
                 Skodas = repository.Skodas
-                    .OrderBy(game => game.Id)
-                    .Skip((page - 1) * pageSize)
-                    .Take(pageSize),
+                 .OrderBy(game => game.Id)
+                 .Skip((page - 1) * pageSize)
+                 .Take(pageSize),
                 PagingInfo = new PagingInfo
                 {
                     CurrentPage = page,
@@ -40,5 +40,6 @@ namespace WebUl.Controllers
             return View(model);
             //Внесенные изменения обеспечивают передачу объекта SkodasSkodaViewModel представлению в качестве данных модели
         }
+      
     }
 }

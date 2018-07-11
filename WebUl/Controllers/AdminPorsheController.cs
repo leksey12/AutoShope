@@ -21,28 +21,53 @@ namespace WebUl.Controllers
         //{
         //    return View(repository.Porshe);
         //}
-        public ViewResult Index(string sortOrder)
+        public ViewResult Index(string sortOrder, string skodasModel, string searchString)
         {
             ViewBag.ModelSortParm = String.IsNullOrEmpty(sortOrder) ? "model_desc" : "";
             ViewBag.PriceSortParm = sortOrder == "Price" ? "price_desc" : "Price";
-            var students = from s in repository.Porshe
-                           select s;
+            var model = from s in repository.Porshe
+                        select s;
+            var ModelLst = new List<string>();
+
+            var ModelQry = from d in repository.Porshe
+                           orderby d.Model
+                           select d.Model;
+
+            ModelLst.AddRange(ModelQry.Distinct());
+            ViewBag.skodasModel = new SelectList(ModelLst);
+
+            //var model = from m in repository.Skodas
+            //            select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(s => s.Name.Contains(searchString));
+
+            }
+
+            if (!string.IsNullOrEmpty(skodasModel))
+            {
+                model = model.Where(x => x.Model == skodasModel);
+            }
             switch (sortOrder)
             {
                 case "model_desc":
-                    students = students.OrderByDescending(s => s.Model);
+                    model = model.OrderByDescending(s => s.Model);
                     break;
                 case "Price":
-                    students = students.OrderBy(s => s.Price);
+                    model = model.OrderBy(s => s.Price);
                     break;
                 case "price_desc":
-                    students = students.OrderByDescending(s => s.Price);
+                    model = model.OrderByDescending(s => s.Price);
                     break;
                 default:
-                    students = students.OrderBy(s => s.Model);
+                    model = model.OrderBy(s => s.Model);
                     break;
             }
-            return View(students.ToList());
+
+
+            return View(model);
+
         }
         public ViewResult Edit(int Id)
         {
